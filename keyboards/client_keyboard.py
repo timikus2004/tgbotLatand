@@ -16,11 +16,13 @@ client_start_kb.row(b4, b5)
 
 # Parsing data from browser
 lunar_btn = KeyboardButton('LunarCalendar')
-empty_btn1 = KeyboardButton('empty1')
+empty_btn1 = KeyboardButton('GetWeather')
 empty_btn2 = KeyboardButton('empty2')
 empty_btn3 = KeyboardButton('empty3')
 client_keyboard_cookies = ReplyKeyboardMarkup(resize_keyboard=True)
 client_keyboard_cookies.row(empty_btn1, empty_btn2, empty_btn3).insert(lunar_btn)
+
+
 
 
 

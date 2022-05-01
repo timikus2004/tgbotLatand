@@ -1,7 +1,10 @@
+import logging
 from aiogram import executor
 from create_bot import dp
 from handlers import client
 from parse import lunar_calendar
+
+logging.basicConfig(level=logging.INFO)
 
 # функция при запуске
 async def on_startup(_):

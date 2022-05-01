@@ -4,6 +4,9 @@ from create_bot import bot
 from aiogram.types import ReplyKeyboardRemove
 from parse import lunar_calendar
 from aiogram.dispatcher.filters import Text
+from openweather import main
+
+
 
 
 
@@ -28,6 +31,13 @@ async def get_cookies(message: types.Message):
 async def get_lunar_data(message: types.Message):
     await bot.send_message(message.from_user.id, f"{lunar_calendar.answer_for_client}", reply_markup=client_keyboard.client_start_kb)
 
+async def get_weather(message: types.Message):
+    await bot.send_message(message.from_user.id, f"{main.data}", reply_markup=client_keyboard.client_start_kb)
+
+
+
+
+
 
 
 
@@ -39,4 +49,8 @@ def register_message_handlers_client(dp: Dispatcher):
     dp.register_message_handler(settings_button, commands=["Settings"])
     dp.register_message_handler(get_cookies, Text(equals="Cookies", ignore_case=True))
     dp.register_message_handler(get_lunar_data, Text(equals="LunarCalendar", ignore_case=True))
+    dp.register_message_handler(get_weather, Text(equals="GetWeather", ignore_case=True))
+
+
+
 
