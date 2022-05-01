@@ -2,9 +2,6 @@ from datetime import datetime
 datetime_now = datetime.now().strftime("%d")
 
 
-from datetime import datetime
-datetime_now = datetime.now().strftime("%d")
-
 months = {
     "01": "january",
     "02": "february",
@@ -31,7 +28,11 @@ def get_month():
 
 def get_day():
     day = datetime.now().strftime("%d")
-    return day
+    if day.startswith("0"):
+        return day[1]
+    else:
+        return day
+
 
 YEAR = get_year()
 MONTH = months[f"{get_month()}"]
