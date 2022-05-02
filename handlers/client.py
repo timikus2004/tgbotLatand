@@ -45,11 +45,11 @@ async def get_weather(message: types.Message):
 # регистрируем обработчик
 def register_message_handlers_client(dp: Dispatcher):
     dp.register_message_handler(start_message, commands="start")
-    dp.register_message_handler(main_button, commands="Main")
-    dp.register_message_handler(settings_button, commands=["Settings"])
-    dp.register_message_handler(get_cookies, Text(equals="Cookies", ignore_case=True))
-    dp.register_message_handler(get_lunar_data, Text(equals="LunarCalendar", ignore_case=True))
-    dp.register_message_handler(get_weather, Text(equals="GetWeather", ignore_case=True))
+    dp.register_message_handler(main_button, commands="main")
+    dp.register_message_handler(settings_button, commands=["settings"])
+    dp.register_message_handler(get_cookies, Text(equals="cookies", ignore_case=True))
+    dp.register_message_handler(get_lunar_data, Text(equals="lunarCalendar", ignore_case=True))
+    dp.register_message_handler(get_weather, Text(equals="getWeather", ignore_case=True))
 
 
 
